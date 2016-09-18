@@ -4,9 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "515af068737f3abc54d0cd2c090e3396",
-    "content-hash": "4be3c063eb6331a8a3de74d3393dee92",
+    "hash": "b0c4d3524648b4df8eeeb89cc4904a50",
+    "content-hash": "a6b7d0d45cd312d26eac306fa5a53d40",
     "packages": [
+        {
+            "name": "arodygin/linode-api-php",
+            "version": "1.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arodygin/php-linode-api3.git",
+                "reference": "99eb4daeebe181a13347f0079eb8584eab166150"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arodygin/php-linode-api3/zipball/99eb4daeebe181a13347f0079eb8584eab166150",
+                "reference": "99eb4daeebe181a13347f0079eb8584eab166150",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.11"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Linode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Linode API v3 Client Library for PHP",
+            "homepage": "https://github.com/arodygin/php-linode-api3",
+            "keywords": [
+                "api",
+                "linode"
+            ],
+            "time": "2016-07-28 21:53:13"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",
