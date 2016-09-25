@@ -9,7 +9,7 @@ namespace AppBundle\Model;
 class Linode
 {
     /** @var int */
-    protected $linodeId;
+    protected $Id;
 
     /** @var boolean */
     protected $alertCpuEnabled;
@@ -90,24 +90,24 @@ class Linode
     protected $totalXfer;
 
     /**
-     * Get linodeId
+     * Get Id
      *
-     * @return $linodeId
+     * @return $Id
      */
-    public function getLinodeId()
+    public function getId()
     {
-        return $this->linodeId;
+        return $this->Id;
     }
 
     /**
-     * Set linodeId
+     * Set Id
      *
-     * @param $linodeId
+     * @param $Id
      * @return $this
      */
-    public function setLinodeId($linodeId)
+    public function setId($Id)
     {
-        $this->linodeId = $linodeId;
+        $this->Id = $Id;
         return $this;
     }
 
@@ -694,7 +694,7 @@ class Linode
     public static function createFromArray(array $data)
     {
         return (new Linode())
-            ->setLinodeId($data['LINODEID'])
+            ->setId($data['LINODEID'])
             ->setAlertCpuEnabled($data['ALERT_CPU_ENABLED'])
             ->setIsKvm($data['ISKVM'])
             ->setAlertBwinEnabled($data['ALERT_BWIN_ENABLED'])

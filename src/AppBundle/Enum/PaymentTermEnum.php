@@ -3,12 +3,13 @@
 namespace AppBundle\Enum;
 
 use MyCLabs\Enum\Enum;
+use AppBundle\Enum\EnumInterface;
 
 /**
  * Class PaymentTerms
  * @author Michael Phillips <michaeljoelphillips@gmail.com>
  */
-class PaymentTerms extends Enum
+class PaymentTermEnum extends Enum implements EnumInterface
 {
     const MONTHLY = 1;
     const YEARLY = 12;

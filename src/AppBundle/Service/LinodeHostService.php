@@ -2,7 +2,12 @@
 
 namespace AppBundle\Service;
 
-use Linode\LinodeApi;
+use AppBundle\Factory\LinodeFactory;
+use AppBundle\Model\Linode;
+use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Model\DataCenter;
+use AppBundle\Enum\PaymentTermEnum;
+use AppBundle\Model\LinodePlan;
 
 /**
  * Class LinodeHostService
@@ -10,28 +15,62 @@ use Linode\LinodeApi;
  */
 class LinodeHostService
 {
-    /** @var LinodeApi */
+    /** @var LinodeApiService $api */
     protected $api;
 
     /**
      * __construct
      *
-     * @param LinodeApi $api
+     * @param LinodeApiService
      */
-    public function __construct(LinodeApi $api)
+    public function __construct(LinodeApiService $api)
     {
-        $this->api = $api;
+        $this->api = $api->get('LinodeApi');
+    }
+
+    public function getLinodes($linodeId = null)
+    {
+        $linodes = new ArrayCollection(
+            array_map(function ($linode) {
+                return Linode::createFromArray($linode);
+            }, $this->api->getList($linodeId))
+        );
+
+        return $linodes;
     }
 
     /**
-     * create
+     * createLinode
      *
-     * @param DataCenterEnum $dataCenter
+     * @param DataCenter $dataCenter
+     * @param Plan $plan
      * @param PaymentTermEnum $paymentTerm
-     * @return bool
+     * @return array
      */
-    public function create(DataCenterEnum $dataCenter, PlanEnum $plan, PaymentTermEnum $paymentTerm)
+    public function createLinode(DataCenter $dataCenter, LinodePlan $plan, PaymentTermEnum $paymentTerm)
     {
-        return $this->api->create($dataCenter->getValue(), $plan->getValue(), $paymentTerm->getValue());
+        return $this->api->create($dataCenter->getId(), $plan->getId(), $paymentTerm->getValue());
     }
+
+    /**
+     * cloneLinode
+     *
+     * @return array
+     */
+    public function cloneLinode(Linode $linode, DataCenter $dataCenter, LinodePlan $plan, PaymentTermEnum $paymentTerm)
+    {
+        return $this->api->duplicate($linode->getId(), $dataCenter->getId(), $plan->getId(), $paymentTerm->getValue());
+    }
+
+    /**
+     * updateLinode function
+     *
+     * @param Linode $linode
+     * @return array
+     */
+    public function updateLinode(Linode $linode)
+    {
+        return $this->api->update($linode->getId(), $linode->getLabel());
+    }
+
 }
