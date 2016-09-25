@@ -3,6 +3,7 @@
 namespace AppBundle\Service;
 
 use AppBundle\Factory\LinodeFactory;
+use AppBundle\Model\Linode;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -28,7 +29,7 @@ class LinodeListService
     {
         $linodes = new ArrayCollection(
             array_map(function ($linode) {
-                return LinodeFactory::createFromArray($linode);
+                return Linode::createFromArray($linode);
             }, $this->api->getList($linodeId))
         );
 

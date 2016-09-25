@@ -14,8 +14,14 @@ services:
 
     linode.form.create:
         class: AppBundle\Form\CreateLinodeType
-        arguments: ["@linode.api"]
+        arguments: ["@linode.api.avail"]
+        tags:
+            - { name: form.type }
 
     linode.api.list:
         class: AppBundle\Service\LinodeListService
+        arguments: ["@linode.api"]
+
+    linode.api.avail:
+        class: AppBundle\Service\LinodeAvailService
         arguments: ["@linode.api"]
