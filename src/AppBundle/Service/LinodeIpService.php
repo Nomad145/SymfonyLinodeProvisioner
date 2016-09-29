@@ -21,7 +21,7 @@ class LinodeIpService
      */
     public function __construct(LinodeApiService $api)
     {
-        $this->api = $api->get('LinodeIpApi');
+        $this->api = $api->get('Linode\\IpApi');
     }
 
     /**
@@ -29,12 +29,12 @@ class LinodeIpService
      *
      * @return ArrayCollection|IpAddress[]
      */
-    public function getIpAddresses($linodeId = null)
+    public function getIpAddresses($linodeId = null, $ipId = null)
     {
         return new ArrayCollection(
             array_map(function (array $data) {
                 return IpAddress::createFromArray($data);
-            }, $this->api->getList($linodeId))
+            }, $this->api->getList($linodeId, $ipId))
         );
     }
 }
