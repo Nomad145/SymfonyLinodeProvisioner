@@ -14,7 +14,7 @@ services:
     php:
         container_name: linode-php
         image: heartland/php
-        # build: .docker/php
+        build: .docker/php
         volumes_from:
             - volumes
         # links:
