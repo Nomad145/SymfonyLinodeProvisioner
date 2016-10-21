@@ -1,0 +1,19 @@
+<div id="status">
+    Current Linode Status: {{ status }}
+    {% if job %}
+        <p id="boot_message">
+           The current linode has been instructed to boot once cloning is complete.  Refresh
+           this page to check on the status.
+        </p>
+    {% endif %}
+</div>
+
+{% if not is_submitted %}
+    <p id="message">
+        You must wait for the machine to boot before you can deploy the migration script.
+    </p>
+{% endif %}
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}

@@ -70,7 +70,18 @@ class LinodeHostService
      */
     public function updateLinode(Linode $linode)
     {
+        // This method takes more optional parameters.  Providing two for now.
         return $this->api->update($linode->getId(), $linode->getLabel());
     }
 
+    /**
+     * bootLinode
+     *
+     * @param Linode $linode
+     * @return int
+     */
+    public function bootLinode(Linode $linode)
+    {
+        return $this->api->boot($linode->getId());
+    }
 }

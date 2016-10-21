@@ -20,3 +20,8 @@ parameters:
 
     # Linode Token for accessing your account.
     linode.token:      TestToken123
+    ssh.username:      john
+    ssh.password:      123qaz
+    ssh.port:          2321
+    script.path:       bin/deploy.sh
+    script.dest:       /tmp/deploy.sh

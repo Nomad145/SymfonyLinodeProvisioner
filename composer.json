@@ -23,7 +23,8 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "arodygin/linode-api-php": "^1.1",
-        "myclabs/php-enum": "^1.4"
+        "myclabs/php-enum": "^1.4",
+        "herzult/php-ssh": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
