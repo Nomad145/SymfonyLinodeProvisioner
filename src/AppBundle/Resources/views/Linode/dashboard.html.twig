@@ -1,3 +1,9 @@
-{% for linode in linodes %}
-    <p>{{ linode.label }}</p>
-{% endfor %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Linode Dashboard{% endblock %}
+
+{% block body %}
+    {% for linode in linodes %}
+        <p>{{ linode.label }}</p>
+    {% endfor %}
+{% endblock %}

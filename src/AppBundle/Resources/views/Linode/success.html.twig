@@ -1,1 +1,7 @@
-Executed script on Linode {{ linode.label }}.
+{% extends 'base.html.twig' %}
+
+{% block title %}Success{% endblock %}
+
+{% block body %}
+    Executed script on Linode {{ linode.label }}.
+{% endblock %}
