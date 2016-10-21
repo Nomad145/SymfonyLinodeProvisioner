@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 use AppBundle\Service\LinodeHostService;
 use AppBundle\Model\Linode;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Class LinodeConverter
@@ -43,7 +44,14 @@ class LinodeConverter implements ParamConverterInterface
             return false;
         }
 
-        $request->attributes->set($param, $this->api->getLinodes($id)->first());
+        $linode = $this->api->getLinodes($id);
+
+        if ($linode->isEmpty()) {
+            throw new NotFoundHttpException('No Linode Found.');
+        }
+
+        $request->attributes->set($param, $linode->first());
+
         return true;
     }
 
