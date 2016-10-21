@@ -60,11 +60,6 @@ class LinodeController extends Controller
             $linode = $data['linode'];
             $linode->setId($response['LinodeID']);
             $this->get("linode.api.host")->updateLinode($linode);
-
-            $linode = $this->get("linode.api.host")
-                ->getLinodes($linode->getId())
-                ->first();
-
             $job = $this->get("linode.api.host")->bootLinode($linode)['JobID'];
 
             // Forward to the provisioning page.
