@@ -3,7 +3,6 @@
 namespace AppBundle\Transformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
-use AppBundle\Enum\EnumInterface;
 
 /**
  * Class ConstantToEnumTransformer
