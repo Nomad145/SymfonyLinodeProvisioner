@@ -238,7 +238,7 @@ class LinodePlan
      *
      * @return LinodePlan
      */
-    public function createFromArray(array $data)
+    public static function createFromArray(array $data)
     {
         return (new LinodePlan())
             ->setId($data['PLANID'])
