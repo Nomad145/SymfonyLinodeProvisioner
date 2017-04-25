@@ -5,6 +5,7 @@ namespace AppBundle\Service;
 use Doctrine\Common\Collections\ArrayCollection;
 use AppBundle\Model\DataCenter;
 use AppBundle\Model\LinodePlan;
+use Linode\AvailApi;
 
 /**
  * Class LinodeAvailService
@@ -20,9 +21,9 @@ class LinodeAvailService
      *
      * @param LinodeApi $api
      */
-    public function __construct(LinodeApiService $api)
+    public function __construct(AvailApi $api)
     {
-        $this->api = $api->get('AvailApi');
+        $this->api = $api;
     }
 
     /**

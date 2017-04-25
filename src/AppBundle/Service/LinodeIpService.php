@@ -4,7 +4,7 @@ namespace AppBundle\Service;
 
 use AppBundle\Service\LinodeApiService;
 use Doctrine\Common\Collections\ArrayCollection;
-use AppBundle\Model\IpAddress;
+use Linode\Linode\IpApi;
 
 /**
  * Class LinodeIpService
@@ -19,9 +19,9 @@ class LinodeIpService
      * __construct
      * @param LinodeApiService $api
      */
-    public function __construct(LinodeApiService $api)
+    public function __construct(IpApi $api)
     {
-        $this->api = $api->get('Linode\\IpApi');
+        $this->api = $api;
     }
 
     /**

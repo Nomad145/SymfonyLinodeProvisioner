@@ -1,15 +1,15 @@
 <?php
 
-namespace AppBundle\Service;
+namespace AppBundle\Factory;
 
 /**
- * Class LinodeApiService
- * @author Michael Phillips <michaeljoelphillips@gmail.com>
+ * LinodeApiFactory
  */
-class LinodeApiService
+class LinodeApiFactory
 {
     /** @var string $key */
     protected $key;
+    private $var;
 
     /**
      * __construct
