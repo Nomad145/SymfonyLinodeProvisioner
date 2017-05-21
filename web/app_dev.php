@@ -2,6 +2,7 @@
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
+use Symfony\Component\Dotenv\Dotenv;
 
 // If you don't want to setup permissions the proper way, just uncomment the following PHP line
 // read http://symfony.com/doc/current/book/installation.html#checking-symfony-application-configuration-and-setup
@@ -25,6 +26,10 @@ if ($_SERVER['SERVER_NAME'] !== 'linode.localhost') {
  */
 $loader = require __DIR__.'/../app/autoload.php';
 Debug::enable();
+
+// Load Dev Environment Variables
+$dotenv = new Dotenv();
+$dotenv->load(__DIR__.'/../.env');
 
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
