@@ -39,6 +39,7 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
+        "symfony/dotenv": "^4.0@dev",
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
@@ -77,5 +78,6 @@
             "type": "git",
             "url": "https://github.com/Nomad145/php-ssh"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }
