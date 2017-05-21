@@ -3,4 +3,4 @@ php:
     - '7.1'
 before_script:
     - sudo apt-get install libssh2-1-dev
-    - pecl install ssh2-1.0 < .noninteractive
+    - printf "\n" | pecl install ssh2-1.0
