@@ -24,7 +24,7 @@
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
         "doctrine/orm": "^2.5",
-        "herzult/php-ssh": "^1.1",
+        "herzult/php-ssh": "dev-master",
         "incenteev/composer-parameter-handler": "^2.0",
         "myclabs/php-enum": "^1.5",
         "phpunit/phpunit": "5.7.9",
@@ -71,5 +71,11 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": null
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Nomad145/php-ssh"
+        }
+    ]
 }

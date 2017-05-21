@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a09d4449eac19d9253e04232f827b6b0",
+    "content-hash": "a24f38f1af9abd09b47bf910169c22ac",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -893,17 +893,11 @@
         },
         {
             "name": "herzult/php-ssh",
-            "version": "v1.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Herzult/php-ssh.git",
-                "reference": "d569d15483a5f9218700313cd21c50090aa93351"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Herzult/php-ssh/zipball/d569d15483a5f9218700313cd21c50090aa93351",
-                "reference": "d569d15483a5f9218700313cd21c50090aa93351",
-                "shasum": ""
+                "url": "https://github.com/Nomad145/php-ssh",
+                "reference": "9bc5cba5894828134d3b1a0a0ae6e2e4608dec92"
             },
             "require": {
                 "ext-ssh2": "*",
@@ -924,18 +918,17 @@
                     "Ssh": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "The contributors",
-                    "homepage": "http://github.com/Herzult/php-ssh/contributors"
-                },
-                {
                     "name": "Antoine Hérault",
                     "homepage": "https://github.com/Herzult"
+                },
+                {
+                    "name": "The contributors",
+                    "homepage": "http://github.com/Herzult/php-ssh/contributors"
                 }
             ],
             "description": "Provides an object-oriented wrapper for the php ssh2 extension.",
@@ -943,7 +936,7 @@
                 "ssh",
                 "ssh2"
             ],
-            "time": "2015-03-17T22:03:22+00:00"
+            "time": "2017-05-21 07:41:15"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -3560,7 +3553,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "herzult/php-ssh": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

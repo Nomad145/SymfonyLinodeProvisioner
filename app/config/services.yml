@@ -38,10 +38,13 @@ services:
     linode.api.ip:
         class: AppBundle\Service\LinodeIpService
         arguments:
-            - "@=service('linode.factory').get('Linode\\IpApi')"
+            - '@=service("linode.factory").get("Linode\\IpApi")'
 
     linode.param:
         class: AppBundle\ParamConverter\LinodeConverter
         arguments: ["@linode.api.host"]
         tags:
             - { name: request.param_converter }
+    ssh.connection.factory:
+        class: AppBundle\Service\SshConnectionFactory
+        arguments: ["%ssh.username%", "%ssh.password%", "%ssh.port%"]

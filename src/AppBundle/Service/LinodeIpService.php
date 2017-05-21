@@ -5,6 +5,7 @@ namespace AppBundle\Service;
 use AppBundle\Service\LinodeApiService;
 use Doctrine\Common\Collections\ArrayCollection;
 use Linode\Linode\IpApi;
+use AppBundle\Model\IpAddress;
 
 /**
  * Class LinodeIpService
