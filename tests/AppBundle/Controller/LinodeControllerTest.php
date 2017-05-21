@@ -16,7 +16,10 @@ class LinodeControllerTest extends WebTestCase
 {
     public function setUp()
     {
-        $this->client = static::createClient();
+        $this->client = static::createClient(array(), array(
+            'PHP_AUTH_USER' => 'admin',
+            'PHP_AUTH_PW'   => 'admin',
+        ));
 
         $availApi = $this->createMock(AvailApi::class);
         $hostApi = $this->createMock(LinodeApi::class);
