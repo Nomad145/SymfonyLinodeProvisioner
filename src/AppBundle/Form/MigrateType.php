@@ -22,18 +22,14 @@ class MigrateType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('domain')
-            ->add('hostname')
-            ->add('ipv4', TextType::class, array(
-                'constraints' => new Ip(array('version' => 4))
-            ))
-            ->add('ipv6', TextType::class, array(
-                'constraints' => new Ip(array('version' => 6))
-            ))
-            ->add('longviewUrl')
-            ->add('longviewKey')
-            ->add('mandrillKey')
-            ->add('mandrillSub')
+            ->add('domain', TextType::class)
+            ->add('hostname', TextType::class)
+            ->add('ipv4', TextType::class)
+            ->add('ipv6', TextType::class)
+            ->add('longviewUrl', TextType::class)
+            ->add('longviewKey', TextType::class)
+            ->add('mandrillKey', TextType::class)
+            ->add('mandrillSub', TextType::class)
             ->add('submit', SubmitType::class);
     }
 
