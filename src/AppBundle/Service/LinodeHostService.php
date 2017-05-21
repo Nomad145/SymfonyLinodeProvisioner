@@ -29,6 +29,10 @@ class LinodeHostService
         $this->api = $api;
     }
 
+    /**
+     * @param int $linodeId
+     * @return ArrayCollection
+     */
     public function getLinodes($linodeId = null)
     {
         $linodes = new ArrayCollection(
