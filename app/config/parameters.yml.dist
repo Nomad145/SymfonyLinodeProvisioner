@@ -25,3 +25,7 @@ parameters:
     ssh.port:          2321
     script.path:       bin/deploy.sh
     script.dest:       /tmp/deploy.sh
+
+    # Default Admin Password
+    admin.password:    '%env(ADMIN_PASSWORD)%'
+    env(ADMIN_PASSWORD): $2y$12$W91G4kvqihso6PcUwnubL.F/20ffeWA3HwPHxr6JF4xhqsgMguY4C
