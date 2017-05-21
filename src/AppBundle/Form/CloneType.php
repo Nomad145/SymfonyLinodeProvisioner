@@ -15,9 +15,10 @@ use AppBundle\Model\Linode;
 class CloneType extends CreateLinodeType
 {
     /**
-     * undocumented function
+     * __construct
      *
-     * @return void
+     * @param LinodeAvailService
+     * @param LinodeHostService
      */
     public function __construct(LinodeAvailService $availApi, LinodeHostService $hostApi)
     {
@@ -26,9 +27,7 @@ class CloneType extends CreateLinodeType
     }
 
     /**
-     * buildForm
-     *
-     * @inherit
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -38,7 +37,7 @@ class CloneType extends CreateLinodeType
             ->add('clone', ChoiceType::class, array(
                 'label' => "Clone",
                 'choices' => $this->hostApi->getLinodes(),
-                'choice_label' => function(Linode $linode) {
+                'choice_label' => function (Linode $linode) {
                     return $linode->getLabel();
                 }
             ));

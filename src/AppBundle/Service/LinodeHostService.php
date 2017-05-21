@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use AppBundle\Model\DataCenter;
 use AppBundle\Enum\PaymentTermEnum;
 use AppBundle\Model\LinodePlan;
+use Linode\LinodeApi;
 
 /**
  * Class LinodeHostService
@@ -23,11 +24,15 @@ class LinodeHostService
      *
      * @param LinodeApiService
      */
-    public function __construct(LinodeApiService $api)
+    public function __construct(LinodeApi $api)
     {
-        $this->api = $api->get('LinodeApi');
+        $this->api = $api;
     }
 
+    /**
+     * @param int $linodeId
+     * @return ArrayCollection
+     */
     public function getLinodes($linodeId = null)
     {
         $linodes = new ArrayCollection(

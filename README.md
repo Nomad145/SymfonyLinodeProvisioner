@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Nomad145/SymfonyLinodeProvisioner.svg?branch=master)](https://travis-ci.org/Nomad145/SymfonyLinodeProvisioner)
+[![codecov](https://codecov.io/gh/Nomad145/SymfonyLinodeProvisioner/branch/master/graph/badge.svg)](https://codecov.io/gh/Nomad145/SymfonyLinodeProvisioner)
+
 # SymfonyLinodeProvisioner
 Creates and clones Linodes from an easy Web Interface.
 

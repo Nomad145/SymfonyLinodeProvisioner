@@ -8,9 +8,10 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
-    linode.api:
-        class: AppBundle\Service\LinodeApiService
+    linode.factory:
+        class: AppBundle\Factory\LinodeApiFactory
         arguments: ["%linode.token%"]
+
 
     linode.form.create:
         class: AppBundle\Form\CreateLinodeType
@@ -26,22 +27,24 @@ services:
 
     linode.api.host:
         class: AppBundle\Service\LinodeHostService
-        arguments: ["@linode.api"]
+        arguments:
+            - "@=service('linode.factory').get('LinodeApi')"
 
     linode.api.avail:
         class: AppBundle\Service\LinodeAvailService
-        arguments: ["@linode.api"]
+        arguments:
+            - "@=service('linode.factory').get('AvailApi')"
 
     linode.api.ip:
         class: AppBundle\Service\LinodeIpService
-        arguments: ["@linode.api"]
+        arguments:
+            - '@=service("linode.factory").get("Linode\\IpApi")'
 
     linode.param:
         class: AppBundle\ParamConverter\LinodeConverter
         arguments: ["@linode.api.host"]
         tags:
             - { name: request.param_converter }
-
     ssh.connection.factory:
         class: AppBundle\Service\SshConnectionFactory
         arguments: ["%ssh.username%", "%ssh.password%", "%ssh.port%"]

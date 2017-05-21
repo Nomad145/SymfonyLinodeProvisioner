@@ -13,7 +13,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="Project Test Suite">
+        <testsuite name="Linode Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
@@ -28,4 +28,7 @@
             </exclude>
         </whitelist>
     </filter>
+    <logging>
+        <log type="coverage-clover" target="coverage.xml"/>
+    </logging>
 </phpunit>
