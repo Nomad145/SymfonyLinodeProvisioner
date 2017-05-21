@@ -2,6 +2,8 @@
 
 namespace AppBundle\Model;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Class MigrateConfig
  * @author Michael Phillips <michaeljoelphillips@gmail.com>
@@ -10,7 +12,15 @@ class MigrateConfig
 {
     protected $domain;
     protected $hostname;
+
+    /**
+     * @Assert\Ip(version="4")
+     */
     protected $ipv4;
+
+    /**
+     * @Assert\Ip(version="6")
+     */
     protected $ipv6;
     protected $longviewUrl;
     protected $longviewKey;
