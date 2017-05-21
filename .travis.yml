@@ -1,4 +1,6 @@
 language: php
 php:
     - '7.1'
-before_script: pecl install ssh2
+before_script:
+    - apt-get install libssh2-1-dev
+    - pecl install ssh2-1.0
